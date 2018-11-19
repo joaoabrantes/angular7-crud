@@ -1,0 +1,23 @@
+div {
+  display: inline-block;
+  width: 60%;
+}
+h5{
+  text-align:center;
+
+}
+
+button {
+  margin-left: 5px
+}
+
+input {
+  text-align: center;
+  border: 5%;
+  border-color: #007bff;
+}
+
+.modal-body {
+  width:100%;
+  text-align: center;
+}

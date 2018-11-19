@@ -1,0 +1,21 @@
+<div>
+  <input [(ngModel)]="search" class="form-control mr-sm-2" type="search" aria-label="Search" placeholder="Search Users">
+  <ul class="list-group">
+    <p *ngIf ="(users | filterUsers: search).length === 0 && showData"><br><strong>User was not found</strong></p>
+    <li *ngFor="let user of users | filterUsers: search" class="list-group-item">
+      <a routerLink="/user/{{user.id}}">{{user.name}}</a>
+      <button type="button" class="close" aria-label="Close" data-toggle="tooltip" data-placement="top" title="Click to delete" (click)="open(content)">
+        <span aria-hidden="true">&times;</span>
+        </button>
+      <ng-template #content let-c="close" let-d="dismiss">
+        <div class="modal-body">
+          <h5 class="modal-title" id="modal-basic-title">Are you sure you want to delete {{user.name}}?</h5>
+          <br>
+          <button type="button" class="btn btn-primary" (click)="d('Cross click')">Close</button>
+          <button type="button" class="btn btn-danger" routerLink="/" (click)="removeUser(user.id)">Delete User</button>
+        </div>
+      </ng-template>
+    </li>
+
+  </ul>
+</div>

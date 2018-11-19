@@ -1,0 +1,13 @@
+div {
+  text-align: center;
+}
+
+button {
+  margin-left: 5px;
+  text-align:center;
+  height: 5%;
+}
+
+.navbar-brand {
+  width: 0%;
+}

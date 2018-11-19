@@ -1,0 +1,16 @@
+<div class = "form-user" *ngIf="show">
+  <h3>User Id: {{user.id}}</h3>
+  <form>
+    <div class="form-group">
+        <label for="title"><strong>name</strong></label>
+        <input [(ngModel)] = "user.name" [ngModelOptions]="{standalone: true}" type="input" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="body"><strong>birthdate</strong></label>
+            {{ user.birthdate | date}}
+      <br>
+      <ngb-datepicker [minDate]="{year: 1948, month: 1, day: 1}" [maxDate]="{year: 2048, month: 12, day: 31}"[(ngModel)]="user.birthdate" [ngModelOptions]="{standalone: true}"   #d></ngb-datepicker>
+    </div>
+    <button type="submit" class="btn btn-primary" (click) = "editUser(user)">Submit</button>
+  </form>
+</div>
